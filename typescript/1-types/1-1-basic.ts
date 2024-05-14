@@ -15,7 +15,7 @@
    */
 
   // TypeScript
-  // number
+  // number (소수도 가능)
   const num: number = 1; // 0.1, -6...
 
   // string
@@ -36,7 +36,7 @@
   }
 
   // null (비었다는 것을 명확하게)
-  let person: null; // 💩
+  let person: null; // 💩 (undefined이랑 마찬가지로 단독으로 사용 x)
   let person2: string | null;
 
   // unknown 💩 가능하면 쓰지 않는 것이 좋음
@@ -44,7 +44,7 @@
   notSure = 'he';
   notSure = true;
 
-  // any 💩
+  // any 💩 unknown과 마찬가지로 가능하면 쓰지 않는 것이 좋음!
   let anything: any = 0;
   anything = 'hello';
 
@@ -57,8 +57,8 @@
   let unusable: void = undefined; // 💩 (변수에서는 활용성이 떨어짐 - undefined밖에 사용할 수 없음)
 
   // never
+  // return X
   function throwError(message: string): never {
-    // return X
     // message -> server (log)
     throw new Error(message);
     while (true) {}
