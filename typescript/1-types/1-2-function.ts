@@ -1,5 +1,6 @@
 {
   //  JavaScript 💩
+  // 숫자가 아닌 문자 타입의 값 전달시 예상과 다른 결과 값이 나올 수 있음
   function jsAdd(num1, num2) {
     return num1 + num2;
   }
@@ -34,6 +35,7 @@
 
   // JavaScript ✨ => TypeScript
   // Optional parameter
+  // ? -> 전달 해도되고 안해도 됨
   function printName(firstName: string, lastName?: string) {
     console.log(firstName);
     console.log(lastName); // 전달하지 않으면 undefined
