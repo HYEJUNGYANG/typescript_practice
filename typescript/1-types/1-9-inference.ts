@@ -1,10 +1,12 @@
 {
   /**
-   * Type Inference
+   * Type Inference (타입 추론)
    */
   let text = 'hello'; // let text: string = 'hello'와 같음
   text = 'hi';
-  //   text = 1;  // error
+  //   text = 1;  // error - ts에서 자동으로 string 타입이라 인식하고 에러 발생(타입 추론)
+  // 함수 매개변수 타입을 명시하지 않으면 any 타입! -> any 타입은 💩
+  // 매개변수에 타입을 명시하지 않아도 기본 값을 할당 하면 타입 추론 가능
   function print(message = 'hello') {
     console.log(message);
   }

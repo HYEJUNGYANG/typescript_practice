@@ -19,5 +19,6 @@
     return undefined;
   }
   const numbers = findNumbers();
+  const numberss = findNumbers()!; // return값이 100% 장담 가능할 때 함수 뒤에 ! 붙이기도 함 (권장x)
   numbers!.push(2); // ! -> ?와 반대되는 것으로 100% 장담하는 것 - 이러다 에러가 발생할 수도 있으므로 조심해서 사용
 }

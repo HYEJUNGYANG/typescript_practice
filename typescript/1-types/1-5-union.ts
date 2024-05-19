@@ -12,6 +12,7 @@
   type TileSize = 8 | 16 | 32;
   const tile: TileSize = 16; // 3가지 값 외에 다른 값은 X
 
+  // union type 관련 예제
   // function login() -> 성공, 실패
   type SuccessState = {
     response: {
@@ -36,6 +37,7 @@
   // fail -> 😭 reason
 
   function printLoginState(state: LoginState) {
+    // response라는 key가 state 안에 있는지 확인
     if ('response' in state) {
       console.log(`🎉 ${state.response.body}`);
     } else {

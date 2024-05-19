@@ -1,6 +1,6 @@
 {
   /**
-   * Intersection Types: &
+   * Intersection Types: & (and 같은 개념!) (union은 or)
    */
   type Student = {
     name: string;

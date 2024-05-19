@@ -2,19 +2,19 @@
   /**
    * Enum
    */
-  // JavaScript에는 X
+  // JavaScript에는 Enum 존재X
   const MAX_NUM = 6;
   const MAX_STUDENTS_PER_CLASS = 10;
   // 연관된 것을 묶을 수 없음
   const MONDAY = 0;
   const TUESDAY = 1;
   const WEDNESDAY = 2;
-  const DAYS_ENUM = Object.freeze({ MONDAY: 0, TUESDAY: 1, WEDNESDAY: 2 });
+  const DAYS_ENUM = Object.freeze({ MONDAY: 0, TUESDAY: 1, WEDNESDAY: 2 }); // js 안에서 그나마 enum과 유사하게
   const dayOfToday = DAYS_ENUM.MONDAY; // 0
 
   // TypeScript
   enum Days { // 앞에 글자만 대문자 나머지는 소문자
-    Monday = 1, // 값을 지정하지 않으면 0부터 (문자열을 넣을 경우에는 모두 할당해줘야 함)
+    Monday = 1, // 값을 지정하지 않으면 0부터 (문자열을 넣을 경우에는 모두 할당해줘야 함), number값인 경우는 순차적으로 증가
     Tuesday,
     Wednesday,
     Thursday,
@@ -25,7 +25,7 @@
   console.log(Days.Monday);
   let day: Days = Days.Saturday;
   day = Days.Tuesday;
-  day = 10; // 이렇게 해도 에러 발생하지 않음
+  // day = 10; // 이렇게 해도 에러 발생하지 않음 -> 해당 부분은 TS 5.0 부터 해결되었음
   console.log(day);
   // TypeScript에서 enum은 가능하면 사용하지 않는 것이 좋음 - 타입이 정확하게 보장되지 않음
 
