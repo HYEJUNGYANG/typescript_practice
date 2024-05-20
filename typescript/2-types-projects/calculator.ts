@@ -1,10 +1,10 @@
 /**
  * Let's make a calculator 🧮
  */
-type Cal = 'add' | 'subtract' | 'multiply' | 'divide' | 'remainder';
+type Command = 'add' | 'subtract' | 'multiply' | 'divide' | 'remainder';
 
-function calculate(cal: Cal, a: number, b: number): number {
-  switch (cal) {
+function calculate(command: Command, a: number, b: number): number {
+  switch (command) {
     case 'add':
       return a + b;
     case 'subtract':
@@ -15,6 +15,8 @@ function calculate(cal: Cal, a: number, b: number): number {
       return a / b;
     case 'remainder':
       return a % b;
+    default:
+      throw new Error('unknown command');
   }
 }
 
