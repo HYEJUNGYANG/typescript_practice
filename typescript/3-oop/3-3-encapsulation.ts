@@ -43,4 +43,28 @@
   //   const maker = new CoffeeMaker(43); - error
   const maker = CoffeeMaker.makeMachine(12);
   maker.fillCoffeeBeans(32);
+
+  // getter, setter 연습
+  class User {
+    private internalAge = 4;
+
+    // get이라는 키워드를 쓰면 아래처럼 함수형태이지만 호출시에는 일반 멤버변수처럼 호출
+    get fullName(): string {
+      return `${this.firstName} ${this.lastName}`;
+    }
+
+    get age(): number {
+      return this.internalAge;
+    }
+    set age(num: number) {
+      this.internalAge = num;
+    }
+
+    // 생성자 함수 매개변수명 앞에 private, public, protected와 같은 키워드를 붙이면 멤버변수 선언과 동일한 역할
+    constructor(private firstName: string, private lastName: string) {}
+  }
+
+  const user = new User('Steve', 'Jobs');
+  console.log(user.fullName); // 멤버변수처럼 호출
+  user.age = 6;
 }
